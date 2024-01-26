@@ -9,7 +9,7 @@ cd '/Users/bayleechristensen/OneDrive - Utah Tech University/SpringClasses2024/A
 grep -c "^>" ExampleAlignment.fasta >> log.txt
 
 # Reports number of samples with unique dates
-grep -oE '_[0-9]{1,2}-[[:alpha:]]{3}' ExampleAlignment.fasta | sort -u | wc -l >> log.txt
+awk -F_ '/_[0-9]{1,2}-[[:alpha:]]{3}/{dates[$2]} END {print length(dates)}' ExampleAlignment.fasta >> log.txt
 
 # Pipes sequences to python script
 grep -v "^>" ExampleAlignment.fasta | python3 PyScript_Exercise1.py >> log.txt

@@ -12,22 +12,19 @@ def main():
         #Process each sequence line from stdin and make each sequence a list
         DNA_sequences.append(list(line.strip()))
 
-        # Since all sequences have same length, we find the sequence length for later reference
-        sequence_length = len(DNA_sequences[0])
+    # Since all sequences have same length, we find the sequence length for later reference
+    sequence_length = len(DNA_sequences[0])
 
-        # iterate over each position in the sequences
-        for i in range(sequence_length):
-            # Looks at every sequence position i for every sequence
-            current_positions = [seq[i] for seq in DNA_sequences]
+    # iterate over each position in the sequences
+    for i in range(sequence_length):
+        # Looks at every sequence position i for every sequence
+        current_positions = [seq[i] for seq in DNA_sequences]
 
         # Checks if there is more than one unique character at that position
         if len(set(current_positions)) > 1:
             variant_sites_count += 1
 
     print("Number of variant sites: ", variant_sites_count)
-
-    # Translating DNA Sequence into protein
-    TranslateFile(DNA_sequences)
 
 #
 #
@@ -45,7 +42,8 @@ def TranslateFile(list_of_sequences):
     return protein_sequences
 
 
-
+if __name__== "__main__":
+    main()
 
 
 
