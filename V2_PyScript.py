@@ -20,9 +20,12 @@ def read_fasta_file(input_file):
 def translate_to_amino(seq_objs):
     amino_acid_seqs = []
     for record in seq_objs:
-        amino_acid_seqs.append(str(record.seq.translate()))
+        try:
+            amino_acid_seqs.append(str(record.seq.translate()))
+        except Exception as e:
+            print(f" Error translating sequence for record with ID {record.id}: {e}")
+            amino_acid_seqs.append("N/A")
     return amino_acid_seqs
-    return count
 
 def count_variant_sites(sequence_list):
     variant_sites_count =0
