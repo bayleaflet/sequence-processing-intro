@@ -1,3 +1,4 @@
+# BJC, Original Author, 1/28/24
 import Bio
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
@@ -44,7 +45,6 @@ def main():
     parser.add_argument("input_file", help="Path to fasta file")
     args = parser.parse_args()
 
-    # Perhaps a input file is passed in here
 
     dna_seqs = read_fasta_file(args.input_file)
     amino_acid_seqs = translate_to_amino(dna_seqs)
@@ -53,8 +53,8 @@ def main():
         dna_seqs_as_str.append(str(record.seq))
     variant_sites_dna = count_variant_sites(dna_seqs_as_str)
     variant_sites_aa = count_variant_sites(amino_acid_seqs)
-    print("Num of variant sites in DNA seq:", variant_sites_dna)
-    print("Num of variant sites in amino acid seq:", variant_sites_aa)
+    print("Number of variant sites in DNA seq:", variant_sites_dna)
+    print("Number of variant sites in amino acid seq:", variant_sites_aa)
 
 if __name__== "__main__":
     main()

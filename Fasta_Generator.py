@@ -1,3 +1,4 @@
+# BJC, original author, 1/28/24
 from V2_PyScript import read_fasta_file, translate_to_amino
 from Bio import SeqIO
 from Bio.Seq import Seq
@@ -5,6 +6,10 @@ from Bio.SeqRecord import SeqRecord
 import argparse
 
 def main():
+    ''' Reads a fasta file, translates the DNA sequence to the amino acid
+    sequence, and replaces the dna sequences with amino acid sequences. Then
+    writes out the file'''
+
     parser = argparse.ArgumentParser(description="Writes out fasta file, replacing dna sequence with amino acid sequence")
     parser.add_argument("input_file", help="Path to fasta file")
     parser.add_argument("output_file", help="Path to output fasta file")
