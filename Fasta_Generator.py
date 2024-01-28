@@ -1,5 +1,5 @@
 # BJC, original author, 1/28/24
-from V2_PyScript import read_fasta_file, translate_to_amino
+from DNA_Processing import read_fasta_file, translate_to_amino
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord

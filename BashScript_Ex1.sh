@@ -1,6 +1,6 @@
 # BJC Original Author, 01/18/2024
 # Please enter your working directory in the line below between the quote marks, then save and quit.
-cd ''
+cd '/Users/bayleechristensen/OneDrive - Utah Tech University/SpringClasses2024/Adv_Bioinfo/Week_2/sequence-processing-intro'
 
 read -p "Enter the file name of which you would like to perform this script on: " original_file
 
@@ -37,7 +37,7 @@ while read -r header; do
 done < $original_file
 
 # Optional Preference
-rm -r Separated_Output/dna_sequence.fasta Separated_Output/protein_sequence.fasta
+rm -r Separated_Output/dna_sequence Separated_Output/protein_sequence
 
 # User friendly output
 echo -e "Output Successful"

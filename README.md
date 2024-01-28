@@ -2,13 +2,30 @@
 # Introduction
 
 The aim of this exercise is to help you understand the basics of shell scripting, a skill that is used in genomic pipeline development
-The solution and instructions for how to run the package can be seen below.
+
+
+# The Solution
+1. Begin by cloning the fork of GitHub repository on to your local device.
+2. Copy or move your fasta file to this directory in which you saved this
+   repository
+3. Run the command ```pwd``` and copy the path
+4. Run the command ```vim BashScript_Ex1.sh``` and paste your working directory
+   on line three. Save and quit. (Note: Would have preferred to allow you to input
+   your working directory, but kept having issues with the spaces in working
+   directories and couldn't figure it out)
+3. Run the script with this command:
+```
+bash BashScript_Ex1.sh
+```
+4. You will be prompted for the name of the file with which  you want to run the
+   script on. Simple type the title of the text.
+5. The Script will run, and all of the outputs will be listed in your current
+   directory.
 
 # Contents
 
 -   [Getting set up](#getting-set-up)
 -   [Completing the exercise](#completing-the-exercise)
--   [Solution](#baylees-Solution)
 
 # Getting set up
 
