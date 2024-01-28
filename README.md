@@ -2,12 +2,13 @@
 # Introduction
 
 The aim of this exercise is to help you understand the basics of shell scripting, a skill that is used in genomic pipeline development
+The solution and instructions for how to run the package can be seen below.
 
 # Contents
 
 -   [Getting set up](#getting-set-up)
 -   [Completing the exercise](#completing-the-exercise)
-
+-   [Solution](#baylees-Solution)
 
 # Getting set up
 
@@ -23,7 +24,7 @@ IF you don't know how to use terminal, don't have a github account, or don't kno
 1.  Fork [this repository]([https://github.com/KLab-UT/4310-pretest](https://github.com/KLab-UT/sequence-processing-intro)) by
     clicking the 'Fork' button on the upper right of the page.
 
-    After a few seconds, you should be looking at *your* 
+    After a few seconds, you should be looking at *your*
     copy of the repo in your own Github account.
 
 1.  Click the 'Clone or download' button, and copy the URL of the repo via the
@@ -61,7 +62,7 @@ Your goal in this exercise is to create coding scripts that will (1) summarize d
 > note: This readme contains several code blocks. Blocks with a ```$``` prompt refer to command that can be executed using bash (or generally other shell languages). Blocks with a ```>>>``` prompt refer to python code. Blocks without a prompt refer to content within a text file.
 
 ## Summarize data from a DNA sequence alignment
-You should create a script that will process a DNA sequence alignment in fasta format. This script should out put a file called "log.txt" that contains (1) the number of samples, (2) the number of unique sampling dates, and (3) the number of variable sites (see below for definition of variable site). 
+You should create a script that will process a DNA sequence alignment in fasta format. This script should out put a file called "log.txt" that contains (1) the number of samples, (2) the number of unique sampling dates, and (3) the number of variable sites (see below for definition of variable site).
 
 > note: You can use any scripting language for this objective. You will draw from computer science skills you have learned in classes up to this point (e.g., storing information in collections, performing simple calculations).
 
@@ -77,9 +78,9 @@ AUGGACCTCUAG
 AUGTACCGCUAG
 ```
 #### Variable Site
-In an alignment, the index of each nucleotide corresponds to the same genetic position in the aligned sequences. For example, in the example above with Gene_4310 from Brooks and Bailey, you can see that usually the nucleotide at each position is the same between both sequences. In alignments of closely related organisms, this will generally be the case. However, it is possible to see differences between sequences in an alignment. For instance, at position 4 in this sequence there is a 'C' for Brooks and a 'G' for Bailey. This is a SNP (single nucleotide polymorphism). In this case, we'd say there is a SNP at position 4. The number of positions where a SNP occurs along a gene is known as the number of variable sites (S). 
+In an alignment, the index of each nucleotide corresponds to the same genetic position in the aligned sequences. For example, in the example above with Gene_4310 from Brooks and Bailey, you can see that usually the nucleotide at each position is the same between both sequences. In alignments of closely related organisms, this will generally be the case. However, it is possible to see differences between sequences in an alignment. For instance, at position 4 in this sequence there is a 'C' for Brooks and a 'G' for Bailey. This is a SNP (single nucleotide polymorphism). In this case, we'd say there is a SNP at position 4. The number of positions where a SNP occurs along a gene is known as the number of variable sites (S).
 
-Can you count the number of variable sites in this sequence alignment? If you got '2', you're correct! However, let's make sure you are correct for the right reasons. A variable site is a position along a gene sequence that contains variation- it doesn't matter how much variation, just that it exists. So at position 4 in this alignment, even though there are three different alleles ('C' for Brooks, 'G' for Bailey, and 'T' for Benjamin), position 4 is only considered one variable site. If this is the first variable site, where is the second? Position 8 ('G' for Brooks and Benjamin, 'T' for Bailey). So position 4 and position 8 are your two variable sites. 
+Can you count the number of variable sites in this sequence alignment? If you got '2', you're correct! However, let's make sure you are correct for the right reasons. A variable site is a position along a gene sequence that contains variation- it doesn't matter how much variation, just that it exists. So at position 4 in this alignment, even though there are three different alleles ('C' for Brooks, 'G' for Bailey, and 'T' for Benjamin), position 4 is only considered one variable site. If this is the first variable site, where is the second? Position 8 ('G' for Brooks and Benjamin, 'T' for Bailey). So position 4 and position 8 are your two variable sites.
 
 #### Looking at a FASTA file
 Let's look at a sequence alignment. At the command line you can examine this file using ```vim ExampleAlignment.fasta```.
@@ -133,7 +134,7 @@ In most ways, we can deal with Seq objects as if they were normal python strings
 ```
 >>> for index, letter in enumerate(my_seq):
 >>>     print(index, letter)
->>> 
+>>>
 >>> print(len(my_seq))
 ```
 Also like a python string, you can do slices iwth a start, stop, and stride. For example, we can get the first, second, and third codon positions of this DNA sequence:
@@ -171,4 +172,18 @@ Your script must generate the following:
 Use ExampleAlignment.fasta as a test fasta file- but this will not be the file that will be used to test your script. I would draw out your approach using pseudocode before you start coding. What are the primary tasks you need to address? What kind of script will you write to address that task? You got this!
 
 
-
+# Solution
+1. Begin by cloning the GitHub Repository properly
+2. Copy or move your fasta file to this directory in which you saved the
+   repository
+3. Run the command ```pwd``` and copy the path
+4. Run the command ```vim BashScript_Ex1.sh``` and paste your working directory
+   on line three. Save and quit.
+3. Run the script with this command:
+```
+bash BashScript_Ex1.sh
+```
+4. You will be prompted for the name of the file with which  you want to run the
+   script on. Simple type the title of the text.
+5. The Script will run, and all of the outputs will be listed in your current
+   directory.
